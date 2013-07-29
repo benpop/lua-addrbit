@@ -9,4 +9,8 @@ You need a 64-bit machine and OS for this to work.
 
 Supports Lua 5.1 and 5.2.
 
-//benpop//
+NOTE:  This is copied and slightly modified from the source of the Lua 5.2 bitwise operations library*.  I do not claim this code as my own original work, and use it by the freedom of Lua's license.
+
+* http://www.lua.org/source/5.2/lbitlib.c.html
+
+((benpop))
