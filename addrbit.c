@@ -45,8 +45,7 @@ static ab_uint to_addr (lua_State *L, int idx) {
     case LUA_TSTRING: {
       size_t l;
       const char *s = lua_tolstring(L, idx, &l);
-      int base = luaL_optint(L, 2, 0);
-      return strtoui64(s, NULL, base);
+      return (ab_uint)strtoui64(s, NULL, 0);
     }
     default: {
       return (ab_uint)lua_topointer(L, idx);
