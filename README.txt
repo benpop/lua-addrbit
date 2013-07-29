@@ -3,6 +3,10 @@ Bitwise operations on 64-bit integers via void pointer.
 Analogous to bit32 library in Lua 5.2, and supports the same operations.
 http://www.lua.org/manual/5.2/manual.html#6.7
 
+To turn a pointer-cum-64-bit-integer into an integer, number, or numerical string, I suggest my lua-int64 or lua-capi libraries.
+	https://github.com/benpop/lua-int64
+	https://github.com/benpop/lua-capi
+
 Very likely needs C99 for an assured 64-bit integral type.  This is the default C version in the Makefile.
 
 You need a 64-bit machine and OS for this to work.
