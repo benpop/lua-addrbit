@@ -43,8 +43,7 @@ static ab_uint to_addr (lua_State *L, int idx) {
       return (ab_uint)lua_tonumber(L, idx);
     }
     case LUA_TSTRING: {
-      size_t l;
-      const char *s = lua_tolstring(L, idx, &l);
+      const char *s = lua_tostring(L, idx);
       return (ab_uint)strtoui64(s, NULL, 0);
     }
     default: {
