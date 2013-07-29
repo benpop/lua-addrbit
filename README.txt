@@ -7,4 +7,6 @@ Very likely needs C99 for an assured 64-bit integral type.  This is the default 
 
 You need a 64-bit machine and OS for this to work.
 
+Supports Lua 5.1 and 5.2.
+
 //benpop//
