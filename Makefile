@@ -20,10 +20,13 @@ CVERSION = -std=c99
 CWARN ?= -Wall -Wextra
 CFLAGS = $(COPT) $(CVERSION) $(CWARN) -I$(LUADIR) -fPIC $(MYFLAGS)
 
-all: addrbit.so
+OBJ = addrbit.o
+TARG = addrbit.so
+
+all: $(TARG)
 
 clean:
-	$(RM) *.o *.so
+	$(RM) $(OBJ) $(TARG)
 
 %.so: %.o $(MYOBJ)
 	$(CC) $(DLLFLAGS) -o $@ $^
