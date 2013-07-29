@@ -9,7 +9,6 @@
 #include "lauxlib.h"
 
 
-#undef ADDR_NBITS
 #define ADDR_NBITS 64
 
 
@@ -41,7 +40,7 @@ typedef uintptr_t ab_uint;
 static ab_uint to_addr (lua_State *L, int idx) {
   switch (lua_type(L, idx)) {
     case LUA_TNUMBER: {
-      return (ab_uint)lua_tounsigned(L, idx);
+      return (ab_uint)lua_tonumber(L, idx);
     }
     case LUA_TSTRING: {
       size_t l;
@@ -226,7 +225,12 @@ static const luaL_Reg lib[] = {
 };
 
 
+#if LUA_VERSION_NUM == 502
+#define luaL_register(L,n,l) luaL_newlib(L,l)
+#endif
+
+
 int luaopen_addrbit (lua_State *L) {
-  luaL_newlib(L, lib);
+  luaL_register(L, "addrbit", lib);
   return 1;
 }
